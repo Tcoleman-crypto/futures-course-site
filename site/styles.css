@@ -1,0 +1,119 @@
+:root {
+  --bg: #0b1220;
+  --panel: #111a2c;
+  --text: #e8eefc;
+  --muted: #99a7c2;
+  --brand: #4f8cff;
+  --accent: #7fe3c8;
+  --danger: #ff7b7b;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: linear-gradient(180deg, #0b1220 0%, #0d1628 50%, #0b1220 100%);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+header {
+  padding: 24px 0;
+  border-bottom: 1px solid #223250;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(11, 18, 32, 0.8);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.logo { font-weight: 800; font-size: 1.1rem; color: #fff; }
+.nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { filter: brightness(1.08); text-decoration: none; }
+.btn-outline { border-color: #3c4f74; color: var(--text); }
+
+.hero {
+  padding: 72px 0;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid #213354;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+h1, h2, h3 { line-height: 1.2; }
+h1 { font-size: clamp(1.9rem, 5vw, 3rem); margin-top: 0; }
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.section { padding: 46px 0; }
+
+.lesson-list li { margin-bottom: 10px; }
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.notice {
+  border-left: 3px solid var(--accent);
+  padding-left: 12px;
+  color: var(--muted);
+}
+
+.quiz {
+  margin-top: 18px;
+  background: #0d172b;
+  border: 1px solid #314565;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.quiz details { margin-bottom: 10px; }
+
+footer {
+  border-top: 1px solid #223250;
+  margin-top: 50px;
+  padding: 22px 0 40px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .hero, .grid-3 { grid-template-columns: 1fr; }
+}
